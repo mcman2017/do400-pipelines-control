@@ -22,14 +22,14 @@ pipeline {
                     }
                 }
             }
-            stage('Deploy') {
+       }
+       stage('Deploy') {
+           steps {
               when {
                 expression { env.GIT_BRANCH == 'origin/main' }
               }
-               steps {
                 echo 'Deploying...'
-              }
             }
-      }
+       }
     }
 }
